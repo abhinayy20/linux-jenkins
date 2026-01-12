@@ -44,6 +44,13 @@ perform_cleanup() {
 # Main Execution Flow
 echo "Disk Monitoring Service started at $(date)"
 
+# Demo trigger for teacher demonstration
+if [ "$1" == "demo" ]; then
+    echo "[DEMO MODE] Forcing cleanup operations..."
+    perform_cleanup
+    exit 0
+fi
+
 # If check_partitions returns 0 (Safe)
 if check_partitions; then
     echo "[OK] All partitions are within safe limits."
