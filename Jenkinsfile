@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-        /* Runs on a remote agent. Change 'remote-agent' to your agent's label. */
-        label 'remote-agent'
-    }
+    agent any
 
     parameters {
         string(name: 'NOTIFY_EMAIL', defaultValue: 'admin@example.com', description: 'Email to notify on failure')
